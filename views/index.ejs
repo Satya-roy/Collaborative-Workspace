@@ -1,0 +1,34 @@
+<%-include('partials/header')-%>
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+
+            <%for(var i=0;i<org.length;i++){%>
+            <tr>
+              <td scope="row"><%=i+1%></td>
+              <td><%=org[i].name%></td>
+                <form class="" action="/join_org" method="post">
+              <td><button type="submit" name="join_org" value="<%=org[i]._id%>" class="btn btn-primary ">Join</i></button></td>
+              </form>
+              <form class="" action="/login_org" method="post">
+              <td><button type="submit" name="login_org" value="<%=org[i]._id%>" class="btn btn-primary ">Login</i></button></td>
+              </form>
+            </tr>
+            <%}%>
+
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<%-include('partials/footer')-%>

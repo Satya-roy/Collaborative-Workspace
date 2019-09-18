@@ -1,0 +1,48 @@
+<head>
+  <link rel="stylesheet" href="/css/upload.css">
+</head>
+<%-include('partials/header')-%>
+
+<div class="container-fluid " id="title">
+  <h1><%=org%></h1>
+</div>
+
+<div class="container-fluid">
+
+
+  <div class="card">
+
+    <div class="card-body">
+
+      <h2 class="card-title">Upload File</h2>
+      <div class="col-lg-6">
+        <form class="" action="index.html" method="post">
+          <div class="input-group mb-3">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="input">
+              <label class="custom-file-label" for="input" aria-describedby="inputGroupFileAddon02">Choose file</label>
+            </div>
+            <div class="input-group-append">
+              <form class="" action="/upload" method="get">
+                <button class="input-group-text" id="inputGroupFileAddon02" type="submit">Upload</button>
+              </form>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+
+<footer id="footer">
+  <i class="fab fa-facebook-square fa-2x footer-icon"></i>
+  <i class="fab fa-instagram fa-2x footer-icon"></i>
+  <i class="fab fa-twitter fa-2x footer-icon"></i>
+  <i class="fas fa-envelope fa-2x footer-icon"></i>
+  <p>© Copyright 2019 <%=org%></p>
+
+</footer>
+
+<%-include('partials/footer')-%>

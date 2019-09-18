@@ -1,0 +1,149 @@
+<%-include('partials/header')-%>
+
+ <section id="title">
+
+    <!-- Nav Bar -->
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+
+        <a class="navbar-brand" href=""><%=name%></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <form class="" action="/list" method="post">
+                <input type="hidden" value="<%=name%>" name="org_name" />
+                <input type="hidden" value="<%=user%>" name="user" />
+                <button type="submit" class="btn btn-outline-light btn-lg">Task</button>
+              </form>
+            </li>
+            <li class="nav-item">
+              <button type="submit" class="btn btn-outline-light btn-lg">Files</button>
+            </li>
+            <li class="nav-item">
+              <input type="hidden" value="<%=name%>" name="org_name" />
+              <input type="hidden" value="<%=user%>" name="user" />
+              <button type="submit" class="btn btn-outline-light btn-lg"><a href="http://localhost:8080/chatRoom/<%=name%>/<%=user%>">Chat</a></button>
+            </li>
+            <li class="nav-item">
+              <button type="submit" class="btn btn-outline-light btn-lg">Contact</button>
+            </li>
+            <li class="nav-item">
+              <button type="submit" class="btn btn-outline-light btn-lg">Logout</button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Title -->
+
+      <div class="row">
+        <div class="col-lg-3">
+          <h1>Hello! <%=user%><br>This is a place, to be.</h1>
+          <form action="/upload/<%=name%>/<%=user%>" method="post">
+
+            <button type="submit" class="btn btn-dark btn-lg">Upload <i class="fas fa-cloud-upload-alt"></i></button>
+          </form>
+
+          <button type="button" class="btn btn-outline-light btn-lg">Download <i class="fas fa-file-download"></i></button>
+        </div>
+
+        <div class="col-lg-8">
+          <i class="fas fa-flushed fa-10x title-img"></i>
+          <!-- <img class ="title-img"  alt="iphone-mockup"> -->
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Features -->
+
+  <section id="features">
+    <div class="row">
+      <div class="feature-box col-lg-4 col-md-12">
+        <i class="icon fas fa-handshake fa-4x "></i>
+        <h3>Together</h3>
+        <p>So easy to use, even your dog could do it.</p>
+      </div>
+
+      <div class="feature-box col-lg-4 col-md-12">
+        <i class="icon fas fa-dollar-sign fa-4x"></i>
+        <h3>Money</h3>
+        <p>We have all the Candies, the greatest milkbar.</p>
+      </div>
+
+      <div class="feature-box col-lg-4 col-md-12">
+        <i class="icon fas fa-heartbeat fa-4x"></i>
+        <h3>Life</h3>
+        <p>Find the love of your life or your get your money back.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Testimonials -->
+
+  <section id="testimonials">
+
+
+    <div id="carousel" class="carousel slide" data-ride="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <h2>I no longer have to see others. Ohh! What a suprise</h2>
+          <i class="fas fa-surprise fa-6x testimonial-img"></i>
+          <em>Pebbles, New York</em>
+        </div>
+        <div class="carousel-item">
+          <h2 class="testimonial-text">I am used to be so lonely, but with Justice League help, I've found the Solace. I think.</h2>
+          <i class="fas fa-meh-blank fa-6x testimonial-img"></i>
+          <em>Beverly, Illinois</em>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+  </section>
+
+
+
+  <!-- Call to Action -->
+
+  <section id="cta">
+
+    <h3 class="cta-heading">Welcome to the future.</h3>
+    <form class="" action="/upload" method="post">
+      <button type="submit" class="btn btn-dark btn-lg">Upload <i class="fas fa-cloud-upload-alt"></i></button>
+    </form>
+
+    <button type="button" class="btn btn-dark btn-lg">Download <i class="fas fa-file-download"></i></button>
+
+  </section>
+
+
+  <!-- Footer -->
+
+  <footer id="footer">
+    <i class="fab fa-facebook-square fa-2x footer-icon"></i>
+    <i class="fab fa-instagram fa-2x footer-icon"></i>
+    <i class="fab fa-twitter fa-2x footer-icon"></i>
+    <i class="fas fa-envelope fa-2x footer-icon"></i>
+    <p>© Copyright 2019 <%=name%></p>
+
+  </footer>
+
+<%-include('partials/footer')-%>

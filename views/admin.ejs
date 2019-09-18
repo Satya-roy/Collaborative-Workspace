@@ -1,0 +1,55 @@
+<%-include('partials/header')-%>
+
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+
+            <%for(var i=0;i<org.length;i++){%>
+            <tr>
+              <td scope="row"><%=i+1%></td>
+              <td><%=org[i].name%></td>
+
+              <form action="/orgPage/<%=org[i].name%>" method="post">
+              <td><button type="submit" name="org" value="<%=org[i]._id%>">Click</button></td>
+              </form>
+
+              <form action="/admin_delete" method="post">
+              <td><button type="submit" name="cross" value="<%=org[i]._id%>"><i class="far fa-times-circle"></i></button></td>
+              </form>
+
+            </tr>
+            <%}%>
+
+
+
+<form class="" action="/newOrg" method="post">
+  <tr>
+    <th scope="row"><%=i+1%></th>
+    <td><input type="text" name="name" value="" class="form-control"></td>
+  </tr>
+
+  <div>
+    <button type="submit" class="btn btn-primary" name="button">Submit</button>
+  </div>
+</form>
+
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+
+
+
+<%-include('partials/footer')-%>

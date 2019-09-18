@@ -1,0 +1,96 @@
+<head>
+  <link rel="stylesheet" href="/css/org.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="/javascript/org.js"></script>
+</head>
+<%-include('partials/header')%>
+
+<!-- Nav Bar -->
+<div class="container-fluid" id="title">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+
+    <a class="navbar-brand" href=""><%=org.name%></a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item">
+          <button type="submit" class="btn btn-outline-light btn-lg">Files</a>
+        </li>
+
+        <li class="nav-item">
+          <button type="submit" class="btn btn-outline-light btn-lg">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<%# members %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Members</h2>
+          <ol class="list-group">
+            <%for(var i=0;i<org.members.length;i++){%>
+            <tr>
+            <div class="row">
+
+            <div class="col-lg-2 col-md-2 memb">
+                <td ><%=i+1%></td>
+            </div>
+
+            <div class="col-lg-6 col-md-5 memb">
+                <td><%=org.members[i]%></td>
+            </div>
+
+            <div class="col-lg-2 col-md-2 memb">
+
+            <form class="" action="/list/org.members[i]" method="get">
+              <input type="hidden" value="<%=org.name%>" name="org_name" />
+              <input type="hidden" value="<%=org.members[i]%>" name="user" />
+
+              <td><button type="submit" name="task" class="btn btn-dark" ><i class="fas fa-thumbtack"></i></button></td>
+            </form>
+
+
+            </div>
+
+            <div class="col-lg-2 col-md-2 memb">
+                <td><button type="submit" name="remove" class="btn btn-dark"><i class="far fa-times-circle"></i></button></td>
+            </div>
+
+
+            </div>
+            </tr>
+            <%}%>
+          </ol>
+        </div>
+      </div>
+  </div>
+
+  <div class="col-lg-6">
+
+  </div>
+
+</div>
+</div>
+
+<!-- Footer -->
+
+<footer id="footer">
+  <i class="fab fa-facebook-square fa-2x footer-icon"></i>
+  <i class="fab fa-instagram fa-2x footer-icon"></i>
+  <i class="fab fa-twitter fa-2x footer-icon"></i>
+  <i class="fas fa-envelope fa-2x footer-icon"></i>
+  <p>© Copyright 2019 <%=org.name%></p>
+
+</footer>
+
+<%-include('partials/footer')%>

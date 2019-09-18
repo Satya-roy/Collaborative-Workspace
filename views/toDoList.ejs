@@ -1,0 +1,30 @@
+<head>
+   <link rel="stylesheet" href="/css/list.css">
+</head>
+
+<%- include('partials/header') %>
+<div class="box" id="heading">
+  <h2>Welcome to <%= org %>, <%= user.username %> </h1>
+</div>
+
+<div class="box">
+  <%user.list.forEach(function(items){%>
+  <form action="/listDelete" method="post">
+    <div class="item">
+      <input type="checkbox" name="checkbox" value="<%=items._id%>" onChange="this.form.submit()">
+      <p><%= items.item %></p>
+    </div>
+    <input type="hidden" name="org" value="<%=org%>"></input>
+    <input type="hidden" name="user" value="<%=user.username%>"></input>
+  </form>
+
+  <%})%>
+
+  <form class="item" action="/addTask" method="POST">
+    <input type="text" name="doNext" placeholder="New Item" autocomplete="off">
+    <input type="hidden" name="org" value="<%=org%>"></input>
+    <button type="submit" name="user" value=<%=user.username%>>+</button>
+  </form>
+</div>
+
+<%- include('partials/footer') %>

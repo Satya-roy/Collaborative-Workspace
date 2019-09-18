@@ -1,0 +1,24 @@
+#users{
+  color: #fff;
+  background-color: #202040;
+  border-radius: 10px;
+  font-family: "Montserrat-Bold"
+}
+
+#title{
+  background-color: #202040;
+  color:#fff;
+}
+
+#icon-tite{
+  margin-left: 0px;
+}
+#box-chat{
+  height: 400px;
+}
+.form-group{
+  padding-top: 10px;
+}
+.card-header{
+  background-color: #202040;
+}
