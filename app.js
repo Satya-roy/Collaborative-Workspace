@@ -150,5 +150,5 @@ io.sockets.on('connection',function(socket){
 });
 //==============================================================================
 app.listen(3000,function(){
-  console.log("Server is Working");
+  console.log("Server is running at port 3000");
 });
