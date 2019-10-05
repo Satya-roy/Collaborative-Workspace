@@ -26,7 +26,7 @@ router.post("/login",function(req,res){
   var x=false;
   org.findById(req.body.org_id,function(err,foundOrg){
     if(err){
-      return res.send("Fisrt Register");
+      return res.send("Fisrt register");
     }
     else{
 
@@ -57,7 +57,7 @@ router.post("/login",function(req,res){
 
             }
             else{
-              res.send("Register to do");
+              res.send("register to do");
             }
           });
         }
